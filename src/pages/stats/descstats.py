@@ -20,14 +20,14 @@ class DescStats(QWidget):
 
         # Container widget to confine everything
         container = QWidget()
-        container.setFixedWidth(400)  # fixed width to confine layout
+        container.setFixedWidth(400)
         container_layout = QVBoxLayout()
         container_layout.setSpacing(10)
         container.setLayout(container_layout)
 
-        # -------------------
-        # Widgets
-        # -------------------
+        ###############    
+        ### Widgets ###
+        ###############
         self.line_edit = QLineEdit()
         self.line_edit.setPlaceholderText("Enter sample: ")
         self.line_edit.setFixedHeight(25)
