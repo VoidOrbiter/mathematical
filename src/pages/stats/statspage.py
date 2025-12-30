@@ -3,7 +3,8 @@ from PyQt5.QtWidgets import (
     QPushButton
 )
 from src.pages.stats import (
-     CorrCovar, DescStats, InferStats
+     CorrCovar, DescStats, InferStats,
+     NonParametric
 )
 
 class StatsPage(QWidget):
@@ -16,26 +17,32 @@ class StatsPage(QWidget):
         layout = QVBoxLayout()
         self.setLayout(layout)
 
-        self.descstats  = DescStats() #index 1
-        self.corrcovar  = CorrCovar() #index 2
-        self.inferstats = InferStats() #index3
+        self.descstats      = DescStats() #index 1
+        self.corrcovar      = CorrCovar() #index 2
+        self.inferstats     = InferStats() #index3
+        self.nonparametric  = NonParametric() #index 4
 
         # buttons
-        descstatsbtn    = QPushButton("Descriptive Statistics")
-        corrcovarbtn    = QPushButton("Correlation && Covariance")
-        inferstatsbtn   = QPushButton("Inferential Statistics")
+        descstatsbtn        = QPushButton("Descriptive Statistics")
+        corrcovarbtn        = QPushButton("Correlation && Covariance")
+        inferstatsbtn       = QPushButton("Inferential Statistics")
+        nonparametricbtn    = QPushButton("Non-Parametric && Multi-Group Analysis")
 
-        descstatsbtn.setFixedSize(200, 30)
-        corrcovarbtn.setFixedSize(200, 30)
-        inferstatsbtn.setFixedSize(200, 30)
+        descstatsbtn.setFixedSize(300, 30)
+        corrcovarbtn.setFixedSize(300, 30)
+        inferstatsbtn.setFixedSize(300, 30)
+        nonparametricbtn.setFixedSize(300, 30)
 
         # .addWidget
         layout.addWidget(descstatsbtn)
         layout.addWidget(corrcovarbtn)
         layout.addWidget(inferstatsbtn)
+        layout.addWidget(nonparametricbtn)
+        layout.addStretch(10)
 
         # .clicked.connect
 
         descstatsbtn.clicked.connect(lambda: self.parent.go_to(self.parent.descstats))
         corrcovarbtn.clicked.connect(lambda: self.parent.go_to(self.parent.corrcovar))
         inferstatsbtn.clicked.connect(lambda: self.parent.go_to(self.parent.inferstats))
+        nonparametricbtn.clicked.connect(lambda: self.parent.go_to(self.parent.nonparametric))

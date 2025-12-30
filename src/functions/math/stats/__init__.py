@@ -7,6 +7,8 @@ from .twosampt import TwoSampT
 from .WelchSatterthwaite import WelchSW
 from .cohens import Cohens
 from .pooledstd import PooledStd
+from .ssbetween import SSBetween
+from .sswithin import SSWithin
 __all__ = [
     "Covariance",
     "Pearson",
@@ -15,6 +17,8 @@ __all__ = [
     "OneSampT",
     "TwoSampT",
     "WelchSW",
-    "Cohens"
+    "Cohens",
+    "SSBetween",
+    "SSWithin"
 
 ]

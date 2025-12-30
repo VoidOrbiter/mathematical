@@ -4,7 +4,8 @@ from PyQt5.QtWidgets import (
 )
 import sys
 from src.pages.stats import (
-    CorrCovar, DescStats, InferStats, StatsPage
+    CorrCovar, DescStats, InferStats, StatsPage,
+    NonParametric
 )
 from src.modules.menus.topbar import TopBar
 
@@ -70,6 +71,8 @@ class MainWindow(QWidget):
         self.stack.addWidget(self.corrcovar)
         self.inferstats = InferStats(self)
         self.stack.addWidget(self.inferstats)
+        self.nonparametric = NonParametric(self)
+        self.stack.addWidget(self.nonparametric)
 
 
     def go_to(self, page):
